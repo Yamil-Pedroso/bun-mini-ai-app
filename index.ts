@@ -15,6 +15,7 @@ const getNextService = (): AIService => {
 };
 
 const server = Bun.serve({
+  hostname: "0.0.0.0",
   port: process.env.PORT ?? 3000,
   async fetch(req) {
     const pathName = new URL(req.url);
@@ -40,3 +41,4 @@ const server = Bun.serve({
 });
 
 console.log(`Server running at http://localhost:${server.port}/`);
+
